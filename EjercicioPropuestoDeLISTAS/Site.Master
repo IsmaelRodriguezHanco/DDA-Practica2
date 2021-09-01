@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EjercicioPropuestoDeLISTAS.SiteMaster" %>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Conversor de temperatura</title>
+	</head>
+	<body>
+		<form id="Form1" runat="server" method="POST" oninput="resultado.value=(parseFloat(valor.value)-32)/1.8">
+		<div>
+			<h1>Electrodomesticos</h1>
+			Elegir electrodomestico:
+			<select id="Electrodomesticos" runat="server"/>
+			<br/><br/>
+			<input type="submit" id="Submit1" runat="server" value="Aceptar"
+			OnServerClick ="Convertir_ServerClick" />
+
+			<p>Resultado: </p>&nbsp;
+			<output id="Convertir" runat="server" name="resultado" for="valor"></output>
+			<div style="font-weight:bold" id="Resultado" runat="server"></div>&nbsp;
+			<output id="Output2" runat="server" name="Resultado2" for="valor"></output>
+			<div style="font-weight:bold" id="Resultado2" runat="server"></div>&nbsp;
+			<br/><br/>
+			<input type="submit" id="MostrarGrafico" runat="server" value="Mostrar Figura" OnServerClick ="MostrarGrafico_ServerClick" />
+			<br /><br />
+			<img id="Grafico" runat="server" />	
+			<asp:ContentPlaceHolder ID="bodyContent" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+		</form>
+	</body>
+</html>
